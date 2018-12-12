@@ -16,3 +16,10 @@ let myself: { name: string; bankAccount: BankAccount; hobbies: string[] } = {
 myself.bankAccount.deposit(3000);
 
 console.log(myself);
+
+// No Implicit Any
+// Error: Has to be given a type
+// function a(v) {
+//   return v;
+// }
+// a('yo');
