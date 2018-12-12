@@ -1,3 +1,9 @@
+// You can find a detailed documentation on the TypeScript Compiler Config File (tsconfig.json) here:
+// http://www.typescriptlang.org/docs/handbook/tsconfig-json.html
+
+// Details on the Compiler Options can be found here:
+// http://www.typescriptlang.org/docs/handbook/compiler-options.html
+
 // string
 let myName = 'Max';
 // myName = 27; // Error
@@ -58,35 +64,36 @@ myFunc = multiply;
 console.log(myFunc(5, 2));
 
 // objects
-let userData: { name: string, age: number } = {
+let userData: { name: string; age: number } = {
   name: 'Max',
   age: 27
-}
+};
 
 // Type alias
-type Complex = { data: number[], output: (all: boolean) => number[] };
+type Complex = { data: number[]; output: (all: boolean) => number[] };
 
 // complex object
-let complex: Complex = { // { data: number[], output: (all: boolean) => number[] } = {
+let complex: Complex = {
+  // { data: number[], output: (all: boolean) => number[] } = {
   data: [100, 3.99, 10],
-  output: function (all: boolean): number[] {
+  output: function(all: boolean): number[] {
     if (all === true) {
       return this.data;
     } else {
       return [0];
     }
   }
-}
+};
 
 console.log(complex.output(true));
 
 // Union Types
 let myRealRealAge: number | string = 27;
-myRealRealAge = "27";
+myRealRealAge = '27';
 // myRealRealAge = true; // Error
 
 // Check type
-let finalValue = "30";
+let finalValue = '30';
 if (typeof finalValue === 'number') {
   console.log('Final value is a number');
 }
@@ -103,3 +110,26 @@ let canAlsoBeNull: number | null = 12;
 canAlsoBeNull = null; // No Error
 let canThisBeAny = null;
 canThisBeAny = 12; // This would've given an error on TS 2.0
+
+// No Implicit Any
+// Error: Has to be given a type
+// function a(v) {
+//   return v;
+// }
+// a('yo');
+
+// No Unused Parameters
+// function m(v: boolean, v2: boolean): void {
+//   if (v) {
+//     console.log('True');
+//   }
+// }
+// m(true, false);
+
+// No Implicit Returns
+// function a(v: string) {
+//   if (v === 'yo') {
+//     return v;
+//   }
+// }
+// a('yo');
