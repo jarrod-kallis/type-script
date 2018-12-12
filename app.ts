@@ -4,6 +4,9 @@
 // Details on the Compiler Options can be found here:
 // http://www.typescriptlang.org/docs/handbook/compiler-options.html
 
+// The following Compatibly Chart helps you find out if you're favorite Feature is supported:
+// http://kangax.github.io/compat-table/es6/
+
 // string
 let myName = 'Max';
 // myName = 27; // Error
@@ -133,3 +136,45 @@ canThisBeAny = 12; // This would've given an error on TS 2.0
 //   }
 // }
 // a('yo');
+
+// No Unused Local Variables
+// if (true) {
+//   let variable = 12;
+// } else {
+//   let variable = 13;
+// }
+
+// Arrow Functions
+const add = (n1: number, n2: number): number => n1 + n2;
+console.log(add(56, 78));
+
+// Rest Operator
+const makeArray = (...args: number[]) => {
+  return args;
+};
+console.log(makeArray(1, 2, 6));
+
+// Rest Operator with tuples
+function printInfo(...info: [string, number]) {
+  console.log('My name is ' + info[0] + ' and I am ' + info[1] + ' years old!');
+}
+printInfo('Jarrod', 39);
+
+// Destructuring
+const myHobbies = ['Cooking', 'Sports', 'Stuff'];
+const [hobby1, hobby2] = myHobbies;
+console.log(hobby1, hobby2);
+
+const userStuff = { userName: 'Max', age: 27 };
+const { userName, age } = userStuff;
+console.log(userName, age);
+// Different aliases for destructured fields
+const { userName: omg1, age: omg2 } = userStuff;
+console.log(omg1, omg2);
+
+// Template Literals
+const v = 'Jarrod';
+const greeting = `Hi,
+My name is ${v}
+How are you?`;
+console.log(greeting);
