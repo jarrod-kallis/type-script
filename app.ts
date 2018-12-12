@@ -95,3 +95,11 @@ if (typeof finalValue === 'number') {
 function neverReturns(): never {
   throw new Error('An error!');
 }
+
+// Nullable Types
+let canBeNull = 12;
+// canBeNull = null; // Error
+let canAlsoBeNull: number | null = 12;
+canAlsoBeNull = null; // No Error
+let canThisBeAny = null;
+canThisBeAny = 12; // This would've given an error on TS 2.0
