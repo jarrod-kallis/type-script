@@ -43,3 +43,13 @@ const max: Max = new Max('max');
 max.age = 27;
 console.log(max);
 console.log(max.age);
+
+class Helpers {
+  public static PI: number = 3.14;
+  public static calcCircumference(diameter: number): number {
+    return diameter * this.PI;
+  }
+}
+
+console.log(2 * Helpers.PI);
+console.log(Helpers.calcCircumference(12750));
