@@ -83,7 +83,7 @@ console.log(itProject);
 class OnlyOne {
   private static instance: OnlyOne;
 
-  private constructor(public name: string) {}
+  private constructor(public readonly name: string) {}
 
   static getInstance() {
     if (!OnlyOne.instance) {
@@ -98,3 +98,4 @@ class OnlyOne {
 // console.log(wrong);
 let right = OnlyOne.getInstance();
 console.log(right);
+// right.name = 'Something else'; // Error - readonly property
