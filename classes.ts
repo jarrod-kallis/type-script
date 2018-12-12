@@ -44,6 +44,7 @@ max.age = 27;
 console.log(max);
 console.log(max.age);
 
+// Statics
 class Helpers {
   public static PI: number = 3.14;
   public static calcCircumference(diameter: number): number {
@@ -53,3 +54,27 @@ class Helpers {
 
 console.log(2 * Helpers.PI);
 console.log(Helpers.calcCircumference(12750));
+
+// Abstract
+abstract class Project {
+  name: string = 'Default';
+  budget: number = 120;
+
+  abstract changeName(name: string): void;
+
+  calcBudget() {
+    return this.budget * 2;
+  }
+}
+
+class ITProject extends Project {
+  changeName(name: string): void {
+    this.name = name;
+  }
+}
+
+let itProject = new ITProject();
+console.log(itProject);
+itProject.changeName('Super IT Project');
+console.log(itProject.calcBudget());
+console.log(itProject);
