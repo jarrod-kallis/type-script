@@ -78,3 +78,23 @@ console.log(itProject);
 itProject.changeName('Super IT Project');
 console.log(itProject.calcBudget());
 console.log(itProject);
+
+// Singleton Pattern
+class OnlyOne {
+  private static instance: OnlyOne;
+
+  private constructor(public name: string) {}
+
+  static getInstance() {
+    if (!OnlyOne.instance) {
+      OnlyOne.instance = new OnlyOne('The Only One');
+    }
+
+    return OnlyOne.instance;
+  }
+}
+
+// let wrong = new OnlyOne('The Only One');
+// console.log(wrong);
+let right = OnlyOne.getInstance();
+console.log(right);
