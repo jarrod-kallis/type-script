@@ -78,3 +78,21 @@ const doubleFunc2: DoubleFunction = function(v1: number, v2: number): number {
 
 console.log(doubleFunc(10, 20));
 console.log(doubleFunc2(20, 30));
+
+// Inheritance
+
+interface IAgedPerson extends IPerson {
+  age: number; // Age is now mandatory
+}
+
+const agePerson: IAgedPerson = {
+  name: 'Max',
+  age: 30,
+  greet(p) {
+    console.log('Hi', p);
+  },
+  greet2() {}
+};
+
+console.log(agePerson);
+agePerson.greet(agePerson);
