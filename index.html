@@ -12,24 +12,27 @@
       <script src="classes.js"></script>
       <script src="exercise3.js"></script>
       <script src="./namespaces/namespaces.js"></script>
+      <script src="node_modules/systemjs/dist/system.js"></script>
     -->
-    <script src="node_modules/systemjs/dist/system.js"></script>
+    <script src="./interfaces/interfaces.js"></script>
   </head>
 
   <body>
-    <script>
-      // Set our baseURL reference path
-      SystemJS.config({
-        baseURL: '/',
-        packages: {
-          '/': {
-            defaultExtension: 'js'
+    <!--
+      <script>
+        // Set our baseURL reference path
+        SystemJS.config({
+          baseURL: '/',
+          packages: {
+            '/': {
+              defaultExtension: 'js'
+            }
           }
-        }
-      });
+        });
 
-      // Loads /js/main.js
-      SystemJS.import('./modules/modules.js');
-    </script>
+        // Loads /js/main.js
+        SystemJS.import('./modules/modules.js');
+      </script>
+    -->
   </body>
 </html>
