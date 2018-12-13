@@ -1,8 +1,5 @@
-/**
- * The alphabetic naming of the files is important here.
- * I couldn't name the file rectangleMath.ts, because it was then included
- * in the app.js file after namespaces.ts, which gave a compilation error.
- */
+/// <reference path="./circleMath.ts" />
+/// <reference path="./rectangleMath.ts" />
 
 const PI = 2.99;
 
