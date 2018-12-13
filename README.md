@@ -15,3 +15,9 @@
 
 1. a. Compile all TypeScript files: `tsc`
    b. Run compliler in watch mode: `tsc -w`
+
+## Module Loader
+
+[SystemJS GitHub Page](https://github.com/systemjs/systemjs)
+
+1. Install specific version of SystemJS: `npm i --save systemjs@0.21.5`
