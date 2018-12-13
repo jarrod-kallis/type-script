@@ -62,3 +62,19 @@ myPerson.name = 'Jarrod';
 myPerson.surname = 'Kallis';
 myPerson.greet(myPerson);
 myPerson.greet2();
+
+// Function Types
+
+interface DoubleFunction {
+  (num1: number, num2: number): number;
+}
+
+const doubleFunc: DoubleFunction = (v1: number, v2: number): number =>
+  (v1 + v2) * 2;
+
+const doubleFunc2: DoubleFunction = function(v1: number, v2: number): number {
+  return (v1 - v2) / 2;
+};
+
+console.log(doubleFunc(10, 20));
+console.log(doubleFunc2(20, 30));
