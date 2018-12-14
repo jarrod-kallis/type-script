@@ -38,11 +38,11 @@ console.log(echo2('Something'));
 console.log(echo2<string>('Something')); // Same thing - more explicit
 
 // Classes
-class SimpleMath<T extends number | string> {
+class SimpleMath<T extends number | string, U extends number | string> {
   baseValue: T;
-  multiplyValue: T;
+  multiplyValue: U;
 
-  constructor(baseValue: T, multiplyValue: T) {
+  constructor(baseValue: T, multiplyValue: U) {
     this.baseValue = baseValue;
     this.multiplyValue = multiplyValue;
   }
@@ -53,5 +53,5 @@ class SimpleMath<T extends number | string> {
   }
 }
 
-const simpleMath = new SimpleMath(10, 20);
+const simpleMath = new SimpleMath<string, number>('10', 20);
 console.log(simpleMath.calculate());
