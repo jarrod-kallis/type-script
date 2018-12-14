@@ -8,3 +8,11 @@ class DecoratedPerson {
     console.log('Hi!');
   }
 }
+
+// Factory
+function mustLog(value: boolean): Function {
+  return value ? logged : () => {};
+}
+
+@mustLog(true)
+class DecoratedCar {}
