@@ -36,3 +36,22 @@ printAll<string>(['apple', 'banana', '28']);
 const echo2: <T>(data: T) => T = betterEcho;
 console.log(echo2('Something'));
 console.log(echo2<string>('Something')); // Same thing - more explicit
+
+// Classes
+class SimpleMath<T extends number | string> {
+  baseValue: T;
+  multiplyValue: T;
+
+  constructor(baseValue: T, multiplyValue: T) {
+    this.baseValue = baseValue;
+    this.multiplyValue = multiplyValue;
+  }
+
+  calculate(): number {
+    // return (this.baseValue as number) * (this.multiplyValue as number);
+    return +this.baseValue * +this.multiplyValue;
+  }
+}
+
+const simpleMath = new SimpleMath(10, 20);
+console.log(simpleMath.calculate());
