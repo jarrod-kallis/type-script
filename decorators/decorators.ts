@@ -25,6 +25,7 @@ function printable(constructorFunc: Function): void {
   };
 }
 
+@mustLog(true) // Multiple decorators
 @printable
 class DecoratedPlant {
   name: string = 'Green Plant';
