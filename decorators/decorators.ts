@@ -96,3 +96,30 @@ DecoratedProject.calcSomething();
 //   console.log('Something else');
 // };
 DecoratedProject.calcSomething();
+
+// Parameter Decorator
+function printInfo(target: any, methodName: string, paramIndex: number): void {
+  console.log('Target: ', target);
+  console.log('Method Name: ', methodName);
+  console.log('Param Index: ', paramIndex);
+}
+
+class Course {
+  private name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+
+  printStudentNumbers(mode: string, @printInfo printAll: boolean): void {
+    if (printAll === true) {
+      console.log(10000);
+    } else {
+      console.log(2000);
+    }
+  }
+}
+
+const course: Course = new Course('This one');
+course.printStudentNumbers('whatever', true);
+course.printStudentNumbers('whatever', false);
