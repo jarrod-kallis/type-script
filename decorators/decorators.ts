@@ -50,11 +50,26 @@ function editable(value: boolean): Function {
   };
 }
 
+function overwritable(value: boolean): Function {
+  return function(target: any, propName: string): any {
+    console.log('Target:', target);
+    console.log('PropName:', propName);
+    console.log('Target[PropName]:', target[propName]);
+
+    const newDescriptor: PropertyDescriptor = {
+      writable: value
+    };
+    return newDescriptor;
+  };
+}
+
 class DecoratedProject {
+  // @overwritable(false) // Error - This results in the property never being writable, even when it's first assigned in the constructor.
   private projectName: string;
 
   constructor(name: string) {
     this.projectName = name;
+    console.log('Project Name: ', this.projectName);
   }
 
   @editable(true)
