@@ -98,7 +98,11 @@ DecoratedProject.calcSomething();
 DecoratedProject.calcSomething();
 
 // Parameter Decorator
-function printInfo(target: any, methodName: string, paramIndex: number): void {
+function printTheInfo(
+  target: any,
+  methodName: string,
+  paramIndex: number
+): void {
   console.log('Target: ', target);
   console.log('Method Name: ', methodName);
   console.log('Param Index: ', paramIndex);
@@ -115,7 +119,7 @@ class Course {
     return this._name;
   }
 
-  printStudentNumbers(mode: string, @printInfo printAll: boolean): void {
+  printStudentNumbers(mode: string, @printTheInfo printAll: boolean): void {
     console.log(mode);
 
     if (printAll === true) {
