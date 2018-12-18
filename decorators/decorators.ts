@@ -105,13 +105,19 @@ function printInfo(target: any, methodName: string, paramIndex: number): void {
 }
 
 class Course {
-  private name: string;
+  private _name: string;
 
   constructor(name: string) {
-    this.name = name;
+    this._name = name;
+  }
+
+  public get name(): string {
+    return this._name;
   }
 
   printStudentNumbers(mode: string, @printInfo printAll: boolean): void {
+    console.log(mode);
+
     if (printAll === true) {
       console.log(10000);
     } else {
