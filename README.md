@@ -21,3 +21,8 @@
 [SystemJS GitHub Page](https://github.com/systemjs/systemjs)
 
 1. Install specific version of SystemJS: `npm i --save systemjs@0.21.5`
+
+## Type Definitions
+
+1. Install library's type definition: `npm i --save-dev @types/<library name>`
+   eg. jQuery: `npm i --save-dev @types/jquery`
