@@ -26,3 +26,8 @@
 
 1. Install library's type definition: `npm i --save-dev @types/<library name>`
    eg. jQuery: `npm i --save-dev @types/jquery`
+
+## Workflow
+
+1. If tsconfig.json File Not In Root Folder: `tsc -p config/tsconfig.json`
+2. Using TypeScript with Gulp: `npm i --save-dev gulp gulp-typescript`
