@@ -16,37 +16,38 @@
       <script src="./generics/generics.js"></script>
       <script src="exercise4.js"></script>
       <script src="decorators/decorators.js"></script>
+      <script src="node_modules/systemjs/dist/system.js"></script>
     -->
-    <script src="node_modules/systemjs/dist/system.js"></script>
   </head>
 
   <body>
     <!-- <button>Click Me!</button>
-    <script
+      <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"
-    ></script>
-    <script src="type definitions/typeDefinitions.js"></script> -->
+      ></script>
+      <script src="type definitions/typeDefinitions.js"></script> -->
 
     <div id="app">Change it with jQuery</div>
-    <script>
-      // Set our baseURL reference path
-      SystemJS.config({
-        map: {
-          jQuery: 'node_modules/jquery/dist/jquery.min.js'
-        },
-        baseURL: '/',
-        packages: {
-          '/': {
-            defaultExtension: 'js'
+    <!-- <script>
+        // Set our baseURL reference path
+        SystemJS.config({
+          map: {
+            jQuery: 'node_modules/jquery/dist/jquery.min.js'
+          },
+          baseURL: '/',
+          packages: {
+            '/': {
+              defaultExtension: 'js'
+            }
           }
-        }
-      });
+        });
 
-      // Loads /js/main.js
-      // SystemJS.import('./modules/modules.js');
-      SystemJS.import('workflow.js');
-    </script>
+        // Loads /js/main.js
+        // SystemJS.import('./modules/modules.js');
+        SystemJS.import('workflow.js');
+      </script> -->
+    <script src="dist/bundle.js"></script>
   </body>
 </html>
